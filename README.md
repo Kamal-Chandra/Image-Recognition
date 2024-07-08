@@ -4,7 +4,7 @@ This project implements Siamese Neural Network for one-shot image recognition (d
 
 ## Files Included
 
-- **Image Recognition Model**: `Image_Recognition.ipynb`
+- **Image Recognition Model**: `Image_Recognition.ipynb`, `Image_Recognition_v2`
 - **Kivy App Implementation**: `faceId.py`, `layers.py`
 
 ## Getting Started
@@ -62,3 +62,9 @@ python faceId.py
 **Dataset**
 
 [Labeled Faces in the Wild (LFW) Dataset](http://vis-www.cs.umass.edu/lfw/lfw.tgz)
+
+## Version 2
+
+Version 2 (`Image_Recognition_v2.ipynb`) of the deep learning model for image recognition incorporates data augmentation to enhance robustness. This iteration utilizes an expanded dataset, resulting in improved performance; however, it necessitates higher computational resources. Therefore, careful consideration of computational capabilities is recommended when selecting this model.
+
+It is also recommended to use around 30 epochs for both models, as this generally yields optimal performance. Adjustments can be made as needed based on specific requirements.
