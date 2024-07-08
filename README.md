@@ -5,7 +5,7 @@ This project implements Siamese Neural Network for one-shot image recognition (d
 ## Files Included
 
 - **Image Recognition Model**: `Image_Recognition.ipynb`, `Image_Recognition_v2`
-- **Kivy App Implementation**: `faceId.py`, `layers.py`
+- **Kivy App Implementation**: `faceId.py`
 
 ## Getting Started
 
