@@ -2,21 +2,29 @@
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 
+from kivy.uix.label import Label
 from kivy.uix.image import Image
 from kivy.uix.button import Button
-from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
 
 from kivy.clock import Clock
-from kivy.graphics.texture import Texture
 from kivy.logger import Logger
+from kivy.graphics.texture import Texture
 
 # Other Dependencies
-import cv2
-import tensorflow as tf
-from layers import L1Dist
 import os
+import cv2
 import numpy as np
+import tensorflow as tf
+from tensorflow.keras.layers import Layer
+
+# Distance Layer
+class L1Dist(Layer):
+    def __init__(self, **kwargs):
+        super(L1Dist, self).__init__(**kwargs)
+    def call(self, inputs):
+        input_embedding, validation_embedding = inputs
+        return tf.math.abs(input_embedding - validation_embedding)
 
 class CamApp(App):
     def build(self):
@@ -98,3 +106,6 @@ class CamApp(App):
             self.verification_label.text = f'Verified: {best_match}'
         else:
             self.verification
+
+if __name__ == '__main__':
+    CamApp().run()
